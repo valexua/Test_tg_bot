@@ -1,0 +1,108 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel API",
+        "description": "Документація API",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/api/run/search/task": {
+            "post": {
+                "summary": "Запуск завдання",
+                "operationId": "ea1d6d2d528e388c2b48fbfb62425e9d",
+                "responses": {
+                    "200": {
+                        "description": "Успішно",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Task run successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Помилка",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Task run failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "summary": "Отримати список користувачів",
+                "description": "Повертає масив користувачів з їхніми ID, іменами та датами оновлення",
+                "operationId": "036a0a69e21d30ab3594be7990af7f74",
+                "responses": {
+                    "200": {
+                        "description": "Успішний запит",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Іван"
+                                            },
+                                            "subscribed": {
+                                                "type": "boolean",
+                                                "example": true
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/get/task/service/{userID}": {
+            "get": {
+                "summary": "Перевірка завдань на сервісі",
+                "operationId": "b63c30b5d35f3dbc8d0ea302be7bad1a",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "ID користувача",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успішно"
+                    }
+                }
+            }
+        }
+    }
+}
