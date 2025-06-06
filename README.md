@@ -13,7 +13,6 @@
      https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/setWebhook?url=<ВАШ_ДОМЕН>/api/telegram/webhook
 
 4. **Підпишіться на бота**
-   - Знайдіть вашого бота у Telegram (за username) та натисніть "Start".
 
 5. **Ініціюйте відправку завдань через API**
    - Для тестування та роботи з API відкрийте Swagger-документацію:
